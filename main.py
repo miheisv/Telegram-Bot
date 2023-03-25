@@ -1,10 +1,12 @@
 import telebot
+from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 import requests
 import json
-from telebot.types import ReplyKeyboardMarkup, KeyboardButton
+from static import TELEGRAM_TOKEN
 
 
-TOKEN = '6075350848:AAGsZkyMyIAFBzKvZ9ndZYoyOOooOwOgl0U'
+
+TOKEN = TELEGRAM_TOKEN
 URL = 'https://geek-jokes.sameerkumar.website/api?format=json'
 bot = telebot.TeleBot(TOKEN)
 
@@ -27,8 +29,6 @@ def get_joke():
         "target": "ru"
     }
     response = requests.request("POST", url, json=payload, headers=headers)
-    print(response.json())
-    print(response.json()['translations']['translation'])
     return response.json()['translations']['translation']
 
 
