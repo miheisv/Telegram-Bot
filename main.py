@@ -1,8 +1,9 @@
 import telebot
 from telebot.types import ReplyKeyboardMarkup, KeyboardButton
 import requests
-import json
-from static import TELEGRAM_TOKEN
+
+# from static_dev import TELEGRAM_TOKEN - для реальной работы
+from static_dev import TELEGRAM_TOKEN  # DEV-режим
 
 
 
